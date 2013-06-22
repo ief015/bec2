@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameField.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\UIProperties.cpp" />
+    <ClCompile Include="src\ui\Checkbox.cpp" />
+    <ClCompile Include="src\ui\ColorPicker.cpp" />
+    <ClCompile Include="src\ui\FontRes.cpp" />
+    <ClCompile Include="src\ui\HueSelection.cpp" />
+    <ClCompile Include="src\ui\Label.cpp" />
+    <ClCompile Include="src\ui\SatVisSelection.cpp" />
+    <ClCompile Include="src\ui\SFWidget.cpp" />
+    <ClCompile Include="src\ui\TexRes.cpp" />
+    <ClCompile Include="src\ui\Textbox.cpp" />
+    <ClCompile Include="src\ui\WidgetTemplate.cpp" />
+    <ClCompile Include="src\ui\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\bec2\Bec2.hpp" />
+    <ClInclude Include="include\bec2\Body.hpp" />
+    <ClInclude Include="include\bec2\Game.hpp" />
+    <ClInclude Include="include\bec2\GameField.hpp" />
+    <ClInclude Include="include\bec2\Renderer.hpp" />
+    <ClInclude Include="include\bec2\UIProperties.hpp" />
+    <ClInclude Include="include\bec2\ui\Checkbox.hpp" />
+    <ClInclude Include="include\bec2\ui\ColorPicker.hpp" />
+    <ClInclude Include="include\bec2\ui\FontRes.hpp" />
+    <ClInclude Include="include\bec2\ui\handler\HueSelectionHandler.hpp" />
+    <ClInclude Include="include\bec2\ui\handler\SatVisSelectionHandler.hpp" />
+    <ClInclude Include="include\bec2\ui\HueSelection.hpp" />
+    <ClInclude Include="include\bec2\ui\Label.hpp" />
+    <ClInclude Include="include\bec2\ui\SatVisSelection.hpp" />
+    <ClInclude Include="include\bec2\ui\SFWidget.hpp" />
+    <ClInclude Include="include\bec2\ui\TexRes.hpp" />
+    <ClInclude Include="include\bec2\ui\Textbox.hpp" />
+    <ClInclude Include="include\bec2\ui\Widget.hpp" />
+    <ClInclude Include="include\bec2\ui\WidgetTemplate.hpp" />
+    <ClInclude Include="include\bec2\ui\Window.hpp" />
+    <ClInclude Include="include\bec2\Vector.hpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F71157E8-8732-46F5-A4A7-C8BD7F462EE5}</ProjectGuid>
+    <RootNamespace>bec2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)extlib/SFML;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>bin\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)extlib/SFML;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>bin\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-main.lib;sfml-system-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sfml-main.lib;sfml-system.lib;sfml-graphics.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

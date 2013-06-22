@@ -10,10 +10,10 @@ Game::Game()
 
 Game::~Game()
 {
-	delete field;
-
 	FontRes::freeFonts();
 	TexRes::freeAll();
+
+	delete field;
 }
 
 

@@ -21,7 +21,12 @@ void FontRes::initializeFonts()
 
 void FontRes::freeFonts()
 {
-	delete OpenSans;
-	delete OpenSans_Bold;
-	delete OpenSans_Light;
+	if (OpenSans)
+		delete OpenSans;
+
+	if (OpenSans_Bold)
+		delete OpenSans_Bold;
+
+	if (OpenSans_Light)
+		delete OpenSans_Light;
 }

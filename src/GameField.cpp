@@ -136,6 +136,11 @@ GameField::~GameField()
 {
 	delete m_properties;
 	delete m_dummyWidget;
+
+	delete m_txtFPS;
+	delete m_txtTick;
+	delete m_txtBodyInfo;
+	delete m_txtInstructions;
 }
 
 
